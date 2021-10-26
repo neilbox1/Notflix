@@ -10,6 +10,40 @@ html {
     -webkit-text-size-adjust: 100%;
   }
 
+
+  .pagination>li.active>a {
+    background-color: #9146FF !important;
+  }
+
+  .pics {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+
+    overflow: scroll;
+}
+
+  #carouselExampleControls .carousel-control-prev  {
+    height: 26%;
+    top: 33%;
+    width: 86px;
+    background: black;
+   
+    }
+
+    #carouselExampleControls .carousel-control-next  {
+      height: 26%;
+      top: 33%;
+      width: 86px;
+      background: black;
+     
+      }
+
+  .purple-text{
+    color:#9146FF;
+  }
+
   .avatar-image {
     padding-left: 10px;
     max-width:3%;
@@ -1105,7 +1139,7 @@ html {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333333;
-    background-color: #fff;
+    background-color: #212121;
   }
   input,
   button,
@@ -4282,6 +4316,8 @@ html {
     -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     -webkit-overflow-scrolling: touch;
+  
+
   }
   .navbar-collapse.in {
     overflow-y: auto;
@@ -4819,11 +4855,12 @@ html {
     padding: 6px 12px;
     margin-left: -1px;
     line-height: 1.42857143;
-    color: #337ab7;
+    color: #9146FF;
     text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #424242;
+    border: 1px solid  #000;
   }
+ /* #6b7985*/ 
   .pagination > li > a:hover,
   .pagination > li > span:hover,
   .pagination > li > a:focus,
@@ -5055,7 +5092,8 @@ html {
     padding-bottom: 30px;
     margin-bottom: 30px;
     color: inherit;
-    background-color: #eeeeee;
+    background-color:#000;
+
   }
   .jumbotron h1,
   .jumbotron .h1 {
