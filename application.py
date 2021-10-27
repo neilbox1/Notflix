@@ -16,6 +16,11 @@ def home():
 def register():
     return render_template('register.html')
 
+
+@app.route('/recommended', methods=['GET', 'POST'] )
+def recommended():
+    return render_template('recommendation.html')
+
 if __name__ == '__main__':
    app.run()
    
