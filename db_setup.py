@@ -12,17 +12,16 @@ user.insert({
     "email": "test@test.com",
     "password": "password",
 }, pk = "username",
-    not_null={"username", "email", "password", "favorites"})
+    not_null={"username", "email", "password"})
 
 user.insert({
     "username": "kitloo",
     "email": "kit@test.com",
     "password": "",
-    "favorites": "hello",
 })
 
 # Query practice goes here
-query_string = f"SELECT * FROM users WHERE username='kitloo'"
+query_string = f"SELECT * FROM users WHERE username='test'"
 
 # print(db.query(query_string))
 result = db.query(query_string)
