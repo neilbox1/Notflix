@@ -4,6 +4,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -56,11 +57,22 @@ html {
     max-height:50%;
     height:10%;
   }
+
+  /* image edit code here */
   .image{
+    
     max-width:100%;
     max-height:100%;
-    height: 60%;
+    width: 250px;
+    height: 400px;
+    
+    /* hover effect here */
+    transition: transform 133ms ease-in-out;
   }
+  /* hover effect here */
+  .image:hover {
+    transform: scale(1.4);
+}
   body {
     margin: 0;
   }
@@ -1139,7 +1151,7 @@ html {
     font-size: 14px;
     line-height: 1.42857143;
     color: #333333;
-    background-color: #212121;
+    background-color: #23264a;
   }
   input,
   button,
@@ -1639,6 +1651,8 @@ html {
     margin-right: auto;
     margin-left: auto;
   }
+
+
   @media (min-width: 768px) {
     .container {
       width: 750px;
@@ -2708,6 +2722,50 @@ html {
     line-height: 1.42857143;
     color: #555555;
   }
+
+  /* search codes here */
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: 3px solid #8e4efb;
+    border-right: none;
+    padding: 5px;
+    height: 36px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  
+  .searchTerm:focus{
+    color: #00B4CC;
+  }
+  
+  .searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #8e4efb;
+    background: #8e4efb;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .wrap{
+    width: 100%;
+    position: relative;
+    
+  }
+
+  /* end of search codes */
+
   .form-control {
     display: block;
     width: 100%;
@@ -3263,10 +3321,11 @@ html {
     color: #fff;
     background-color: #333;
   }
+  /* view details button here*/
   .btn-primary {
     color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
+    background-color: #000;
+    border-color: #8e4efb;
   }
   .btn-primary:focus,
   .btn-primary.focus {
@@ -4100,6 +4159,10 @@ html {
     z-index: 2;
     margin-left: -1px;
   }
+
+  .navbar {
+    background-color: #383c68;
+  }
   .nav {
     padding-left: 0;
     margin-bottom: 0;
@@ -4184,6 +4247,7 @@ html {
     top: auto;
     left: auto;
   }
+
   @media (min-width: 768px) {
     .nav-tabs.nav-justified > li {
       display: table-cell;
@@ -5095,10 +5159,12 @@ html {
     background-color:#000;
 
   }
-  .jumbotron h1,
+  /*.jumbotron h1,
   .jumbotron .h1 {
     color: inherit;
-  }
+  }*/
+  
+
   .jumbotron p {
     margin-bottom: 15px;
     font-size: 21px;
@@ -6367,6 +6433,7 @@ html {
   .popover-content {
     padding: 9px 14px;
   }
+
   .carousel {
     position: relative;
   }
