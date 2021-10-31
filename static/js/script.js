@@ -2,34 +2,34 @@
 
 const API_KEY = 'api_key=870c39df7d9874056daa00e472d1533f';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const API_URL = BASE_URL + '/discover/movie/?certification_country=US&certification=R&sort_by=vote_average.desc&'+API_KEY;
+const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const searchURL = BASE_URL + '/search/movie?' + API_KEY;
 
 const main = document.getElementById('main');
 const form = document.getElementById('form');
-const search = document.getElementById('search');
+const search = document.getElementById('MovieSearch');
 
-getAnime(API_URL);
+getMovie(API_URL);
 
-function getAnime(url){
+function getMovie(url){
     fetch(url).then(res => res.json()).then(data =>{
         console.log(data.results);
-        showAnime(data.results);
+        showMovie(data.results);
     })
 }
 
-function showAnime(data) {
+function showMovie(data) {
     main.innerHTML = '';
 
-    data.forEach(anime => {
-        const {title, poster_path, vote_average, overview} = anime;
-        const animeEL = document.createElement('div');
-        animeEL.classList.add('anime');
-        animeEL.innerHTML = `
-             <img src="${IMG_URL+poster_path}" alt="${title}">
+    data.forEach(movie => {
+        const {title, poster_path, vote_average, overview} = movie;
+        const movieEL = document.createElement('div');
+        movieEL.classList.add('movie');
+        movieEL.innerHTML = `
+             <img class="image" src="${IMG_URL+poster_path}" alt="${title}">
             
-            <div class="anime-info">
+            <div class="movie-info">
                 <h3>${title}</h3>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
@@ -37,8 +37,9 @@ function showAnime(data) {
             <div class="overview">
                 ${overview}
             </div>
+            <center><p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p></center>   
         `
-        main.appendChild(animeEL);
+        main.appendChild(movieEL);
     })
 }
 
@@ -57,8 +58,8 @@ form.addEventListener('submit', (e) =>{
     const searchTerm = search.value;
 
     if(searchTerm){
-        getAnime(searchURL+'&query='+searchTerm)
+        getMovie(searchURL+'&query='+searchTerm)
     }else{
-        getAnime(API_URL);
+        getMovie(API_URL);
     }
 })
