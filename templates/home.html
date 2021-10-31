@@ -75,13 +75,15 @@
           <p class="text-light">We have recommendations for you!</p>
           
          
-          <div class="wrap">
-            <div class="search">
-               <input type="text" class="searchTerm" placeholder="What are you looking for?">
+          <div>
+              <form id="form">
+               <input type="text" id="MovieSearch" class="searchTerm" placeholder="What are you looking for?">
+               <div class="pull-right">
                <button type="submit" class="searchButton">
                  <i class="fa fa-search"></i>
               </button>
-            </div>
+              </div>
+              </form>
          </div>
 
 
@@ -94,10 +96,16 @@
     
 
       <!-- script.js will populate this -->
-      <main id="main">
-    
+      <div class="container">
+        <!-- <div class="row" id="main"> -->
 
-      </main>
+          <main id="main">
+
+        
+
+          </main>
+        <!-- </div> -->
+      </div>
       <div class="container">
         <!-- Example row of columns -->
         <!-- individual shows go here-->
@@ -187,7 +195,6 @@
       </div> <!-- /container -->
 
 
-    </main>
 
     <footer class="container">
       <p class="text-light">&copy; 2021</p>
