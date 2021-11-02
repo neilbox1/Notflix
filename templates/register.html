@@ -9,15 +9,16 @@
 	</head>
 
 	<body class="text-center">
-    <form class="form-signin">
+    
+    <form action="{{ url_for('register')}}" method="POST" class="form-signin">
       <img class="mb-4" src="../static/logo2.png" alt="" width="200" height="100">
       <h1 class="h3 mb-3 text-light font-weight-normal">Sign up</h1>
       <label for="inputEmail" class="sr-only text-light">Email address</label>
       <input type="email" name="emailuser" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
       <label class="sr-only text-light">New username</label>
-      <input type="text" name="user" id="inputUser" class="form-control" placeholder="Username" required autofocus>
-      <label for="inputPassword" name="emailpass" class="sr-only text-light">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <input type="text" name="registerUser" id="inputUser" class="form-control" placeholder="Username" required autofocus>
+      <label for="inputPassword" class="sr-only text-light">Password</label>
+      <input type="password" name="emailpass" id="inputPassword" class="form-control" placeholder="Password" required>
       <div class="checkbox mb-3">
     
       </div>
