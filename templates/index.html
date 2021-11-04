@@ -20,7 +20,9 @@
       </div>
       <button class="btn btn-lg btn-primary btn-block" name="submitButton" type="submit">Sign in</button>
       {% for message in get_flashed_messages() %}
-        <h2>{{ message }}</h2>
+        <div class="alert">
+            {{ message }}
+        </div>
       {% endfor %}
       <p style = "padding: 10px 50px"><div><a href="register">New? Register here</a></div></p>
       <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
