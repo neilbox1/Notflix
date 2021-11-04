@@ -20,9 +20,14 @@
       <label for="inputPassword" class="sr-only text-light">Password</label>
       <input type="password" name="emailpass" id="inputPassword" class="form-control" placeholder="Password" required>
       <div class="checkbox mb-3">
+        {% for message in get_flashed_messages() %}
+        <div class="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
     
       </div>
-      <button class="btn btn-lg btn-primary btn-block" name="submitButton" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" name="submitButton" type="submit">Sign up</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
     </form>
   </body>
