@@ -23,7 +23,7 @@ function showMovie(data) {
     main.innerHTML = '';
 
     data.forEach(movie => {
-        const {title, poster_path, vote_average, overview} = movie;
+        const {title, poster_path, vote_average, overview, id} = movie;
         const movieEL = document.createElement('div');
         movieEL.classList.add('movie');
         movieEL.innerHTML = `
@@ -37,10 +37,58 @@ function showMovie(data) {
             <div class="overview">
                 ${overview}
             </div>
-            <center><p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p></center>   
+            <center><p><a onclick="movieSelected('${id}')" class="btn btn-primary" href="detail" role="button">View details &raquo;</a></p></center> 
         `
         main.appendChild(movieEL);
     })
+}
+
+function movieSelected(id2){
+    sessionStorage.setItem('movieId',id2);
+    window.location = 'detail.html';
+    return false;
+}
+
+
+function getDetails(){
+    
+    let movieId = sessionStorage.getItem('movieId');
+    axios.get('https://api.themoviedb.org/3/movie/' +movieId +'?' + API_KEY)
+     .then((response) => {
+         console.log(response);
+        let movie = response.data;
+
+
+        let output = `
+            <div class="detail">
+                <div class="col-md-4">
+                </div>
+                    <img src="${IMG_URL+movie.poster_path}" class="image">
+                <div class="col-md-8">
+                    <h2>${movie.title}</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Title:</strong> ${movie.title}</li>
+                        <li class="list-group-item"><strong>Released:</strong> ${movie.release_date}</li>
+                        <li class="list-group-item"><strong>Status:</strong> ${movie.status}</li>
+                        <li class="list-group-item"><strong>Score:</strong> ${movie.vote_average}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="detail">
+                <h3>Plot</h3>
+                ${movie.overview}
+                <hr>
+                <a href="home" target="_blank" class="btn btn-primary">Go Back</a>
+                <a href="index.html" class="btn btn-default">Go Back To Search</a>
+            </div>
+        
+        `;
+
+        $('#movie').html(output);
+     })
+     .catch((err) => {
+         console.log(err);
+     });
 }
 
 function getColor(vote){
