@@ -110,7 +110,10 @@ main{
     transition: transform 0.3s ease-in;
 }
 
-/* removing hover effect to see the details button
-.movie:hover .overview{
-    transform: translateY(0);
-} */
+#movies img, #movie img{
+    width:30%;
+}
+
+.detail {
+    color: white;
+}
