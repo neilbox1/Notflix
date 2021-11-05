@@ -51,3 +51,7 @@ body {
 .alert {
   color: white;
 }
+
+.hidden-form {
+  display: none;
+}

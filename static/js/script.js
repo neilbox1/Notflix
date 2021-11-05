@@ -10,7 +10,6 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('MovieSearch');
 
-getMovie(API_URL);
 
 function getMovie(url){
     fetch(url).then(res => res.json()).then(data =>{

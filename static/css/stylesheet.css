@@ -122,3 +122,7 @@ main{
 .detail {
     color: white;
 }
+
+.hidden-form {
+    display: none;
+}
