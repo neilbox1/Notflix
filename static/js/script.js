@@ -37,12 +37,13 @@ function showMovie(data) {
             <div class="overview">
                 ${overview}
             </div>
-            <center><p><a onclick="movieSelected('${id}')" class="btn btn-primary" href="detail" role="button">View details &raquo;</a></p></center> 
+            <center><p><a onclick="movieSelected('${id}')" class="btn btn-primary" href="#" role="button">View details &raquo;</a></p></center> 
         `
         main.appendChild(movieEL);
     })
 }
 function movieSelected(id2){
+    result = "string";
     axios.get('https://api.themoviedb.org/3/movie/' +id2 +'/external_ids?' + API_KEY)
      .then((response) => {
          console.log(response);
@@ -50,10 +51,11 @@ function movieSelected(id2){
 
         result = response.data.imdb_id;
         console.log(result);
+        sessionStorage.setItem('movieId',result);
+        window.location = 'detail';
 
      })
-    sessionStorage.setItem('movieId',result);
-    window.location = 'detail';
+
     return false;
 }
 
