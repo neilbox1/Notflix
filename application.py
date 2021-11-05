@@ -63,9 +63,6 @@ def register():
         
         print(e_mail + name + encrypted_pass)
         return render_template('home.html', userName=name)
-    print("Total number of users is", Users.query.count())
-    school = Users.query.filter_by(username='test').first()
-    print("user's name is", school.username)
 
     return render_template('register.html')
 
