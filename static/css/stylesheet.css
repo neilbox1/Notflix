@@ -61,7 +61,11 @@ main{
 }
 
 .movie img{
-    width: 100%;
+    /*width: 100%;*/
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .movie-info{
@@ -71,6 +75,7 @@ main{
     justify-content: space-between;
     padding: 0.5rem 1rem 1rem;
     letter-spacing: 0.5px;
+    white-space: nowrap;
 
 }
 
