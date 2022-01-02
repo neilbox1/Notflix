@@ -50,7 +50,6 @@ main{
 }
 
 .movie{
-    display: table;
     width: 250px;
     margin: 1rem;
     border-radius: 3px;
@@ -61,7 +60,7 @@ main{
 }
 
 .movie img{
-    /*width: 100%;*/
+    height: 375px;
     width: 250px;
     display: block;
     margin-left: auto;

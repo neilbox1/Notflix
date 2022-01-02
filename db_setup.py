@@ -11,12 +11,12 @@ hash2 = encrypt.hash("pass")
 print(hash)
 print(hash2)
 user = db["users"]
-# user.insert({
-#     "username": "test",
-#     "email": "test@test.com",
-#     "password": hash,
-# }, pk = "username",
-#     not_null={"username", "email", "password"})
+user.insert({
+    "username": "test",
+    "email": "test@test.com",
+    "password": hash,
+}, pk = "username",
+    not_null={"username", "email", "password"})
 
 # user.insert({
 #     "username": "kitloo",
@@ -30,6 +30,7 @@ query_string = f"SELECT password FROM users WHERE username='test'"
 # print(db.query(query_string))
 result = db.query(query_string)
 print(result)
+print(f" this is the hash: {hash}")
 for x in result:
     print(x)
     print(encrypt.verify("password", x["password"]))
