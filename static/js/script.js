@@ -62,7 +62,7 @@ function movieSelected(id2){
 function getDetails(){
     let movieId = sessionStorage.getItem('movieId');
 
-    axios.get('http://www.omdbapi.com/?i='+movieId + '&apikey=9be27fce')
+    axios.get('https://www.omdbapi.com/?i='+movieId + '&apikey=9be27fce')
      .then((response) => {
          console.log(response);
         let movie = response.data;
@@ -88,7 +88,7 @@ function getDetails(){
                 <h3>Plot</h3>
                 ${movie.Plot}
                 <hr>
-                <a href="http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
+                <a href="https://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
             </div>
         
         `;
